@@ -1,1 +1,13 @@
-<p>tecleo works!</p>
+<main>
+  <cite>{{ frase }}</cite>
+  <p>{{ mensaje }}</p>
+  <form>
+    <input
+      [(ngModel)]="loTecleado"
+      (input)="onInput()"
+      name="loTecleado"
+      type="text"
+    />
+    <button type="button" (click)="empezar()">Empezar</button>
+  </form>
+</main>
