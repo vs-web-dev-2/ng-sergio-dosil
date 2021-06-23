@@ -1,0 +1,10 @@
+<header>
+  <h1>Últimas cotizaciones del euro 💶</h1>
+</header>
+
+<main>
+  <h2>
+    Fecha: <time id="fecha">{{ fecha | date: "dd/MM/yyyy" }}</time>
+  </h2>
+  <app-cotizaciones [cotizaciones]="cotizaciones"></app-cotizaciones>
+</main>

@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class TecleoComponent implements OnInit {
   public frase = 'En un lugar de la mancha';
   public mensaje = 'Esperando';
-  private inicio = Date.now();
   public loTecleado = 'Haz click en empezar';
+
+  private inicio = Date.now();
+  private haTerminado = false;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,13 +22,16 @@ export class TecleoComponent implements OnInit {
     this.mensaje = 'Vamos allá';
     this.inicio = Date.now();
     this.loTecleado = '';
+    this.haTerminado = false;
   }
 
   public onInput() {
+    if (this.haTerminado) return;
     const ahora = Date.now();
     let tiempo = (ahora - this.inicio) / 1000;
     if (this.frase === this.loTecleado) {
       this.mensaje = 'Enhorabuena, has tardado ' + tiempo;
+      this.haTerminado = true;
     } else if (this.frase.startsWith(this.loTecleado)) {
       this.mensaje = 'Vas bien ' + tiempo;
     } else {

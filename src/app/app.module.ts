@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { PieComponent } from './pie/pie.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { TecleoModule } from './tecleo/tecleo.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, PieComponent, CabeceraComponent],
-  imports: [BrowserModule, AppRoutingModule, TecleoModule],
+  imports: [BrowserModule, AppRoutingModule, TecleoModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
